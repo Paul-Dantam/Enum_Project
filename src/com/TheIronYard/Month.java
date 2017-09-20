@@ -1,5 +1,7 @@
 package com.TheIronYard;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum Month {
 
 
@@ -23,6 +25,7 @@ public enum Month {
         this.englishName = englishName;
     }
 
+    @JsonValue
     public String getEnglishName() {
         return englishName;
     }

@@ -1,23 +1,20 @@
 package com.TheIronYard;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
-
 
 public class Main {
 
     public static void main(String[] args) {
-        // write your code here
-
-        //add into an array list all the months that follow the given month inclusively
-
         ArrayList<String> inclusiveFutureMonths = new ArrayList<>();
-
-
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Please enter a month");
-
         String month = sc.nextLine();
 
         switch (month) {
@@ -57,8 +54,26 @@ public class Main {
                 System.out.println(monthsName);
             }
         }
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            String json = mapper.writeValueAsString(Month.MAY);
+            try {
+                File outputFile = new File(Month.MAY+ ".json");
+                FileWriter fileWriter = new FileWriter(outputFile);
+                fileWriter.write(json);
+                fileWriter.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+
+
+
     }
-
-
 }
 
