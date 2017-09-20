@@ -1,6 +1,5 @@
 package com.TheIronYard;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.FileWriter;
@@ -60,7 +59,7 @@ public class Main {
         try {
             String json = mapper.writeValueAsString(Month.MAY);
             try {
-                File outputFile = new File(Month.MAY+ ".json");
+                File outputFile = new File(Month.MAY+ ".Json");
                 FileWriter fileWriter = new FileWriter(outputFile);
                 fileWriter.write(json);
                 fileWriter.close();
@@ -71,9 +70,6 @@ public class Main {
         } catch(Exception e){
             e.printStackTrace();
         }
-
-
-
     }
 }
 

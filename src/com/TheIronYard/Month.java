@@ -3,8 +3,6 @@ package com.TheIronYard;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum Month {
-
-
     JANUARY("January"),
     FEBRUARY("February"),
     MARCH("March"),
@@ -17,7 +15,6 @@ public enum Month {
     OCTOBER("October"),
     NOVEMBER("November"),
     DECEMBER("December");
-
 
     private String englishName;
 
